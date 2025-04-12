@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Pancake Maker</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="image-container">
+        <img src="https://images.unsplash.com/photo-1598214886806-c87b84b7078b?q=80&w=2825&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Delicious pancakes" />
+        <div class="price-banner"><span id="totalPrice">5€</span></div>
+      </div>
+
+      <div class="form-container">
+        <h2>Customize Your Pancake</h2>
+
+        <form id="pancakeForm">
+          <!-- Customer Name -->
+          <label for="customerName">Your Name:</label>
+          <input type="text" id="customerName" placeholder="Enter your name" />
+
+          <!-- Pancake Type -->
+          <label for="type">Choose your pancake type:</label>
+          <select id="type">
+            <option data-price="5">Classic - 5€</option>
+            <option data-price="6">Chocolate - 6€</option>
+            <option data-price="7">Blueberry - 7€</option>
+          </select>
+
+          <!-- Toppings -->
+          <h3>👌 Select your toppings (1€ each):</h3>
+          <label
+            ><input type="checkbox" class="topping" data-price="1" />🥜 Nuts
+          </label>
+          <label
+            ><input type="checkbox" class="topping" data-price="1" />🍌 Bananas
+          </label>
+          <label
+            ><input type="checkbox" class="topping" data-price="1" />🧉 Syrup
+          </label>
+
+          <!-- Extras -->
+          <h3>➕ Add extras:</h3>
+          <label
+            ><input type="checkbox" class="extra" data-price="2" />🍦 Whipped
+            Cream - 2€</label
+          >
+          <label
+            ><input type="checkbox" class="extra" data-price="3" />🍨 Ice Cream -
+            3€</label
+          >
+
+          <!-- Delivery Method -->
+          <h3>🚀 Choose delivery method:</h3>
+          <label
+            ><input
+              type="radio"
+              name="delivery"
+              class="delivery"
+              data-price="0"
+              checked
+            />
+            Eat In</label
+          >
+          <label
+            ><input
+              type="radio"
+              name="delivery"
+              class="delivery"
+              data-price="0"
+            />
+            Pick Up</label>
+          <label>
+            <input type="radio" name="delivery" class="delivery"data-price="5"/>Delivery (+5€)
+          </label>
+
+          <!-- Total Price Display -->
+          <h3>Total Price: <span id="totalPriceDisplay">5€</span></h3>
+
+          <!-- See Order Button -->
+          <button type="button" id="seeOrder">See Order</button>
+          <button type="button" id="placeOrder">Place Order</button>
+          <button type="button" id="showOrders">Show All Orders</button>
+        </form>
+        
+        <div id="ordersModal" class="modal">
+          <div class="modal-content">
+            <span class="closeBtn">&times;</span>
+            <h3>All Orders</h3>
+            
+            <div class="table-wrapper">
+              <table id="ordersTable">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Pancake</th>
+                    <th>Toppings</th>
+                    <th>Extras</th>
+                    <th>Delivery</th>
+                    <th>Total</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        
+
+        <!-- Order Summary Display -->
+        <div id="orderSummary">
+          <h3>Order Summary</h3>
+          <p id="summaryText">Your order details will appear here.</p>
+        </div>
+      </div>
+    </div>
+<!-- SweetAlert2 CDN -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script src="script.js"></script>
+  </body>
+</html>
